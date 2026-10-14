@@ -52,6 +52,7 @@ That's it (就这么简单 · これだけ · 이게 다예요). On first launch
 <a href="https://openrouter.ai/"><img src="src/web/static/img/providers/openrouter.png" alt="OpenRouter" height="32"></a>&nbsp;&nbsp;
 <a href="https://openai.com/"><img src="src/web/static/img/providers/openai.png" alt="OpenAI" height="32"></a>&nbsp;&nbsp;
 <a href="https://mistral.ai/"><img src="src/web/static/img/providers/mistral.png" alt="Mistral" height="32"></a>&nbsp;&nbsp;
+<a href="https://cheaperinference.com/"><img src="src/web/static/img/providers/cheaperinference.png" alt="Cheaper Inference" height="32"></a>&nbsp;&nbsp;
 <a href="https://www.deepseek.com/"><img src="src/web/static/img/providers/deepseek.png" alt="DeepSeek" height="32"></a>&nbsp;&nbsp;
 <a href="https://deepmind.google/technologies/gemini/"><img src="src/web/static/img/providers/gemini.png" alt="Gemini" height="32"></a>&nbsp;&nbsp;
 <a href="https://build.nvidia.com/"><img src="src/web/static/img/providers/nvidia.png" alt="NVIDIA NIM" height="32"></a>
@@ -59,6 +60,7 @@ That's it (就这么简单 · これだけ · 이게 다예요). On first launch
 
 | Provider | Type | Get started |
 |----------|------|-------------|
+| **Cheaper Inference** | Cloud (multi-model) | [cheaperinference.com](https://cheaperinference.com/signup) |
 | **DeepSeek** | Cloud | [platform.deepseek.com](https://platform.deepseek.com/api_keys) |
 | **Gemini** | Cloud | [Google AI Studio](https://aistudio.google.com/apikey) |
 | **Mistral** | Cloud | [console.mistral.ai](https://console.mistral.ai/api-keys) |
@@ -134,6 +136,10 @@ python translate.py -i book.txt --provider mistral \
 python translate.py -i book.txt --provider deepseek \
     --deepseek_api_key YOUR_KEY -m deepseek-v4-pro -tl French
 
+# With Cheaper Inference
+python translate.py -i book.txt --provider cheaperinference \
+    --cheaperinference_api_key YOUR_KEY -m gpt-5.4-mini -tl French
+
 # With Poe
 python translate.py -i book.txt --provider poe \
     --poe_api_key YOUR_KEY -m Claude-Sonnet-4 -tl French
@@ -156,7 +162,7 @@ python translate.py -i book.txt --provider openai \
 | `-sl, --source_lang` | Source language | English |
 | `-tl, --target_lang` | Target language | Chinese |
 | `-m, --model` | Model name | qwen3:14b |
-| `--provider` | ollama/openrouter/openai/gemini/mistral/deepseek/poe/nim | ollama |
+| `--provider` | ollama/openrouter/openai/gemini/mistral/deepseek/cheaperinference/poe/nim | ollama |
 | `--parallel` | Chunks translated concurrently (cloud only; Ollama stays at 1) | 1 |
 | `--text-cleanup` | OCR/typographic cleanup | disabled |
 | `--refine` | Second pass for literary polish | disabled |

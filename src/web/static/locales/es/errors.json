@@ -20,6 +20,7 @@
   "api_key_required_openrouter": "Se requiere la clave de API de OpenRouter al usar el proveedor OpenRouter.",
   "api_key_required_mistral": "Se requiere la clave de API de Mistral al usar el proveedor Mistral.",
   "api_key_required_deepseek": "Se requiere la clave de API de DeepSeek al usar el proveedor DeepSeek.",
+  "api_key_required_cheaperinference": "Se requiere la clave de API de Cheaper Inference al usar el proveedor Cheaper Inference.",
   "api_key_required_poe": "Se requiere la clave de API de Poe. Obtén tu clave en poe.com/api_key",
   "api_key_required_nim": "Se requiere la clave de API de NVIDIA NIM al usar el proveedor NIM."
 }

@@ -20,6 +20,7 @@
   "api_key_required_openrouter": "OpenRouter プロバイダーを使用するには OpenRouter API キーが必要です。",
   "api_key_required_mistral": "Mistral プロバイダーを使用するには Mistral API キーが必要です。",
   "api_key_required_deepseek": "DeepSeek プロバイダーを使用するには DeepSeek API キーが必要です。",
+  "api_key_required_cheaperinference": "Cheaper Inference プロバイダーを使用するには Cheaper Inference API キーが必要です。",
   "api_key_required_poe": "Poe API キーが必要です。poe.com/api_key でキーを取得してください",
   "api_key_required_nim": "NIM プロバイダーを使用するには NVIDIA NIM API キーが必要です。"
 }

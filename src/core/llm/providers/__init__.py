@@ -10,6 +10,7 @@ Providers:
     - gemini: Google Gemini API
     - mistral: Mistral AI API
     - deepseek: DeepSeek API (cost-effective Chinese LLM)
+    - cheaperinference: Cheaper Inference OpenAI-compatible LLM API
 """
 
 __all__ = []

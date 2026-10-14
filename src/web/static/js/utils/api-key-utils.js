@@ -17,6 +17,7 @@ const STATUS_ID_MAP = {
     'openrouterApiKey': 'openrouterKeyStatus',
     'mistralApiKey': 'mistralKeyStatus',
     'deepseekApiKey': 'deepseekKeyStatus',
+    'cheaperinferenceApiKey': 'cheaperinferenceKeyStatus',
     'poeApiKey': 'poeKeyStatus',
     'nimApiKey': 'nimKeyStatus'
 };
@@ -30,6 +31,7 @@ const PROVIDER_FIELD_MAP = {
     'openrouter': 'openrouterApiKey',
     'mistral': 'mistralApiKey',
     'deepseek': 'deepseekApiKey',
+    'cheaperinference': 'cheaperinferenceApiKey',
     'poe': 'poeApiKey',
     'nim': 'nimApiKey'
 };
@@ -203,6 +205,10 @@ export const ApiKeyUtils = {
 
         if (provider === 'deepseek' && !isAvailable) {
             return { valid: false, message: t('errors:api_key_required_deepseek') };
+        }
+
+        if (provider === 'cheaperinference' && !isAvailable) {
+            return { valid: false, message: t('errors:api_key_required_cheaperinference') };
         }
 
         if (provider === 'poe' && !isAvailable) {

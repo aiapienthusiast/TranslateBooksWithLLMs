@@ -746,6 +746,7 @@ async def refine_chunks(
     openrouter_api_key=None,
     mistral_api_key=None,
     deepseek_api_key=None,
+    cheaperinference_api_key=None,
     poe_api_key=None,
     nim_api_key=None,
     context_window=2048,
@@ -821,6 +822,7 @@ async def refine_chunks(
         openrouter_api_key=openrouter_api_key,
         mistral_api_key=mistral_api_key,
         deepseek_api_key=deepseek_api_key,
+        cheaperinference_api_key=cheaperinference_api_key,
         poe_api_key=poe_api_key,
         nim_api_key=nim_api_key,
         context_window=initial_context, log_callback=log_callback

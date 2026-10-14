@@ -261,6 +261,7 @@ async def test_client_is_built_with_the_jobs_own_keys(patched):
         openrouter_api_key='ork',
         mistral_api_key='mk',
         deepseek_api_key='dk',
+        cheaperinference_api_key='ck',
         poe_api_key='pk',
         nim_api_key='nk',
     )
@@ -274,6 +275,7 @@ async def test_client_is_built_with_the_jobs_own_keys(patched):
         'openrouter_api_key': 'ork',
         'mistral_api_key': 'mk',
         'deepseek_api_key': 'dk',
+        'cheaperinference_api_key': 'ck',
         'poe_api_key': 'pk',
         'nim_api_key': 'nk',
         'context_window': auto_prep.AUTO_PREP_CONTEXT_WINDOW,

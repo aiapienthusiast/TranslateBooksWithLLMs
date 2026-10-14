@@ -57,6 +57,7 @@ def _make_args(**overrides):
         openrouter_api_key="",
         mistral_api_key="",
         deepseek_api_key="",
+        cheaperinference_api_key="",
         poe_api_key="",
         nim_api_key="",
     )

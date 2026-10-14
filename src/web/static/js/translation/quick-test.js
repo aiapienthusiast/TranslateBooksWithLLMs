@@ -32,6 +32,7 @@ const PROVIDER_LABELS = {
     openrouter: 'OpenRouter',
     mistral: 'Mistral',
     deepseek: 'DeepSeek',
+    cheaperinference: 'Cheaper Inference',
     poe: 'Poe',
     nim: 'NVIDIA NIM',
 };

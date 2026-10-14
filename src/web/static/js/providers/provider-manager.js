@@ -44,6 +44,14 @@ const DEEPSEEK_FALLBACK_MODELS = [
     { value: 'deepseek-reasoner', label: 'DeepSeek Reasoner (Thinking)' }
 ];
 
+const CHEAPERINFERENCE_FALLBACK_MODELS = [
+    { value: 'gpt-5.4-mini', label: 'GPT-5.4 Mini' },
+    { value: 'gpt-5.4', label: 'GPT-5.4' },
+    { value: 'claude-sonnet-5', label: 'Claude Sonnet 5' },
+    { value: 'gemini-3.1-pro', label: 'Gemini 3.1 Pro' },
+    { value: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash' }
+];
+
 /**
  * Comprehensive Poe models list - organized by provider
  * Poe has a /v1/models API endpoint, but this fallback list is used when API fails
@@ -344,6 +352,7 @@ export const ProviderManager = {
         // Get mistral, deepseek, poe and nim settings elements once
         const mistralSettings = DomHelpers.getElement('mistralSettings');
         const deepseekSettings = DomHelpers.getElement('deepseekSettings');
+        const cheaperinferenceSettings = DomHelpers.getElement('cheaperinferenceSettings');
         const poeSettings = DomHelpers.getElement('poeSettings');
         const nimSettings = DomHelpers.getElement('nimSettings');
 
@@ -356,6 +365,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadOllamaModels();
@@ -367,6 +377,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'block';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadPoeModels();
@@ -378,6 +389,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadGeminiModels();
@@ -389,6 +401,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadOpenAIModels();
@@ -400,6 +413,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'block';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadOpenRouterModels();
@@ -411,6 +425,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'block';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadMistralModels();
@@ -422,9 +437,22 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'block';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'none';
             if (loadModels) this.loadDeepSeekModels();
+        } else if (provider === 'cheaperinference') {
+            DomHelpers.hide('ollamaSettings');
+            if (geminiSettings) geminiSettings.style.display = 'none';
+            if (openaiApiKeyGroup) openaiApiKeyGroup.style.display = 'none';
+            if (openaiEndpointRow) openaiEndpointRow.style.display = 'none';
+            if (openrouterSettings) openrouterSettings.style.display = 'none';
+            if (mistralSettings) mistralSettings.style.display = 'none';
+            if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'block';
+            if (poeSettings) poeSettings.style.display = 'none';
+            if (nimSettings) nimSettings.style.display = 'none';
+            if (loadModels) this.loadCheaperInferenceModels();
         } else if (provider === 'nim') {
             DomHelpers.hide('ollamaSettings');
             if (geminiSettings) geminiSettings.style.display = 'none';
@@ -433,6 +461,7 @@ export const ProviderManager = {
             if (openrouterSettings) openrouterSettings.style.display = 'none';
             if (mistralSettings) mistralSettings.style.display = 'none';
             if (deepseekSettings) deepseekSettings.style.display = 'none';
+            if (cheaperinferenceSettings) cheaperinferenceSettings.style.display = 'none';
             if (poeSettings) poeSettings.style.display = 'none';
             if (nimSettings) nimSettings.style.display = 'block';
             if (loadModels) this.loadNimModels();
@@ -468,6 +497,8 @@ export const ProviderManager = {
             this.loadMistralModels();
         } else if (provider === 'deepseek') {
             this.loadDeepSeekModels();
+        } else if (provider === 'cheaperinference') {
+            this.loadCheaperInferenceModels();
         } else if (provider === 'nim') {
             this.loadNimModels();
         }
@@ -925,6 +956,60 @@ export const ProviderManager = {
 
             StateManager.setState('models.availableModels', DEEPSEEK_FALLBACK_MODELS.map(m => m.value));
             StatusManager.setConnected('deepseek', DEEPSEEK_FALLBACK_MODELS.length);
+        }
+    },
+
+    async loadCheaperInferenceModels() {
+        const modelSelect = DomHelpers.getElement('model');
+        if (!modelSelect) return;
+
+        setPlaceholderOption(modelSelect, 'settings:search_models_loading_cheaperinference');
+        StatusManager.setChecking();
+
+        try {
+            const apiKey = ApiKeyUtils.getValue('cheaperinferenceApiKey');
+            if (!apiKey) {
+                MessageLogger.showMessage(t('settings:cheaperinference_key_required'), 'warning');
+                setPlaceholderOption(modelSelect, 'settings:search_models_enter_key_first');
+                StatusManager.setError(t('settings:status_no_api_key'));
+                return;
+            }
+
+            const data = await ApiClient.getModels('cheaperinference', { apiKey });
+
+            if (data.models && data.models.length > 0) {
+                MessageLogger.showMessage('', '');
+
+                const formattedModels = data.models.map(m => ({
+                    value: m.id,
+                    label: m.name || m.id,
+                    context_length: m.context_length
+                }));
+
+                populateModelSelect(formattedModels, data.default, 'cheaperinference');
+                MessageLogger.addLog(t('settings:cheaperinference_models_loaded_log', { count: data.count }));
+
+                SettingsManager.applyPendingModelSelection();
+                ModelDetector.checkAndShowRecommendation();
+
+                StateManager.setState('models.availableModels', formattedModels.map(m => m.value));
+                StatusManager.setConnected('cheaperinference', data.count);
+            } else {
+                const errorMessage = data.error || t('settings:cheaperinference_default_error');
+                MessageLogger.showMessage(t('settings:deepseek_fallback_msg', { message: errorMessage }), 'warning');
+                populateModelSelect(CHEAPERINFERENCE_FALLBACK_MODELS, 'gpt-5.4-mini', 'cheaperinference');
+                MessageLogger.addLog(t('settings:cheaperinference_fallback_log'));
+
+                StateManager.setState('models.availableModels', CHEAPERINFERENCE_FALLBACK_MODELS.map(m => m.value));
+                StatusManager.setConnected('cheaperinference', CHEAPERINFERENCE_FALLBACK_MODELS.length);
+            }
+        } catch (error) {
+            MessageLogger.showMessage(t('settings:deepseek_error_fallback_msg', { error: error.message }), 'warning');
+            MessageLogger.addLog(t('settings:cheaperinference_error_fallback_log', { error: error.message }));
+            populateModelSelect(CHEAPERINFERENCE_FALLBACK_MODELS, 'gpt-5.4-mini', 'cheaperinference');
+
+            StateManager.setState('models.availableModels', CHEAPERINFERENCE_FALLBACK_MODELS.map(m => m.value));
+            StatusManager.setConnected('cheaperinference', CHEAPERINFERENCE_FALLBACK_MODELS.length);
         }
     },
 

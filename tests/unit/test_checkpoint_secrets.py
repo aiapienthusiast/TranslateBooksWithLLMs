@@ -28,6 +28,7 @@ SECRET_CONFIG = {
     'openrouter_api_key': 'sk-or-1,sk-or-2',
     'mistral_api_key': 'mistral-secret',
     'deepseek_api_key': 'ds-secret',
+    'cheaperinference_api_key': 'ci-secret',
     'poe_api_key': 'poe-secret',
     'nim_api_key': 'nim-secret',
     'prompt_options': {'glossary_id': 3},

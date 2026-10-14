@@ -458,6 +458,7 @@ export const FormManager = {
             ApiKeyUtils.setupField('openrouterApiKey', config.openrouter_api_key_configured, config.openrouter_api_key, config.openrouter_api_key_count);
             ApiKeyUtils.setupField('mistralApiKey', config.mistral_api_key_configured, config.mistral_api_key, config.mistral_api_key_count);
             ApiKeyUtils.setupField('deepseekApiKey', config.deepseek_api_key_configured, config.deepseek_api_key, config.deepseek_api_key_count);
+            ApiKeyUtils.setupField('cheaperinferenceApiKey', config.cheaperinference_api_key_configured, config.cheaperinference_api_key, config.cheaperinference_api_key_count);
             ApiKeyUtils.setupField('poeApiKey', config.poe_api_key_configured, config.poe_api_key, config.poe_api_key_count);
             ApiKeyUtils.setupField('nimApiKey', config.nim_api_key_configured, config.nim_api_key, config.nim_api_key_count);
 
@@ -663,6 +664,7 @@ export const FormManager = {
         const geminiApiKey = provider === 'gemini' ? ApiKeyUtils.getValue('geminiApiKey') : '';
         const openaiApiKey = provider === 'openai' ? ApiKeyUtils.getValue('openaiApiKey') : '';
         const openrouterApiKey = provider === 'openrouter' ? ApiKeyUtils.getValue('openrouterApiKey') : '';
+        const cheaperinferenceApiKey = provider === 'cheaperinference' ? ApiKeyUtils.getValue('cheaperinferenceApiKey') : '';
 
         // Get TTS configuration
         const ttsEnabled = DomHelpers.getElement('ttsEnabled')?.checked || false;
@@ -685,6 +687,7 @@ export const FormManager = {
             gemini_api_key: geminiApiKey,
             openai_api_key: openaiApiKey,
             openrouter_api_key: openrouterApiKey,
+            cheaperinference_api_key: cheaperinferenceApiKey,
             // Prompt options (optional system prompt instructions)
             // Technical content protection is always enabled
             prompt_options: promptOptions,

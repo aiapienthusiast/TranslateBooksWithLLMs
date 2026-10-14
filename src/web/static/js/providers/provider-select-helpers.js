@@ -14,6 +14,7 @@ import { t } from '../i18n/i18n.js';
 export const PROVIDER_LOGOS = {
     ollama: '/static/img/providers/ollama.png',
     poe: '/static/img/providers/poe.png',
+    cheaperinference: '/static/img/providers/cheaperinference.png',
     deepseek: '/static/img/providers/deepseek.png',
     mistral: '/static/img/providers/mistral.png',
     gemini: '/static/img/providers/gemini.png',
@@ -25,6 +26,7 @@ export const PROVIDER_LOGOS = {
 export const PROVIDER_META = {
     ollama: { name: 'Ollama', description: 'Local' },
     poe: { name: 'Poe', description: 'Multi-Provider' },
+    cheaperinference: { name: 'Cheaper Inference', description: 'Cloud API' },
     deepseek: { name: 'DeepSeek', description: 'Cloud API' },
     mistral: { name: 'Mistral', description: 'Cloud API' },
     gemini: { name: 'Gemini', description: 'Cloud' },
@@ -34,7 +36,7 @@ export const PROVIDER_META = {
 };
 
 // Canonical A-Z order used everywhere a provider dropdown is built.
-export const PROVIDER_ORDER = ['deepseek', 'gemini', 'mistral', 'nim', 'ollama', 'openai', 'openrouter', 'poe'];
+export const PROVIDER_ORDER = ['cheaperinference', 'deepseek', 'gemini', 'mistral', 'nim', 'ollama', 'openai', 'openrouter', 'poe'];
 
 /**
  * Replace the dropdown content with a single placeholder option whose text
@@ -58,7 +60,7 @@ function formatPrice(price) {
  *   - Gemini  → displayName + token-limit tooltip
  *   - OpenAI  → curated label list
  *   - OpenRouter / Poe → optgroups (Poe) + pricing in the label
- *   - Mistral / DeepSeek / NIM → label + context-length tooltip
+ *   - Mistral / DeepSeek / Cheaper Inference / NIM → label + context-length tooltip
  *   - Ollama  → plain model names (strings)
  *
  * Returns true iff `defaultModel` was found among the options and selected.
@@ -138,7 +140,7 @@ export function populateModelSelectInto(selectEl, models, defaultModel = null, p
             if (modelId === defaultModel) { opt.selected = true; defaultFound = true; }
             (optgroup || selectEl).appendChild(opt);
         });
-    } else if (provider === 'mistral' || provider === 'deepseek' || provider === 'nim') {
+    } else if (provider === 'mistral' || provider === 'deepseek' || provider === 'cheaperinference' || provider === 'nim') {
         list.forEach((m) => {
             // Same dual-shape tolerance as the openai branch: Settings sends
             // `{value, label}`, the Sample tab forwards the raw `{id, name}`.

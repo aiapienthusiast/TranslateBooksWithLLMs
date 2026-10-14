@@ -169,6 +169,7 @@ def create_llm_client(llm_provider: str, gemini_api_key: Optional[str],
                       openrouter_api_key: Optional[str] = None,
                       mistral_api_key: Optional[str] = None,
                       deepseek_api_key: Optional[str] = None,
+                      cheaperinference_api_key: Optional[str] = None,
                       poe_api_key: Optional[str] = None,
                       nim_api_key: Optional[str] = None,
                       context_window: Optional[int] = None,
@@ -185,6 +186,7 @@ def create_llm_client(llm_provider: str, gemini_api_key: Optional[str],
         openrouter_api_key: API key for OpenRouter provider
         mistral_api_key: API key for Mistral provider
         deepseek_api_key: API key for DeepSeek provider
+        cheaperinference_api_key: API key for Cheaper Inference provider
         poe_api_key: API key for Poe provider
         nim_api_key: API key for NVIDIA NIM provider
         context_window: Context window size for the model
@@ -204,6 +206,8 @@ def create_llm_client(llm_provider: str, gemini_api_key: Optional[str],
         return LLMClient(provider_type="mistral", model=model_name, api_key=mistral_api_key)
     if llm_provider == "deepseek":
         return LLMClient(provider_type="deepseek", model=model_name, api_key=deepseek_api_key)
+    if llm_provider == "cheaperinference":
+        return LLMClient(provider_type="cheaperinference", model=model_name, api_key=cheaperinference_api_key)
     if llm_provider == "poe":
         return LLMClient(provider_type="poe", model=model_name, api_key=poe_api_key)
     if llm_provider == "nim":

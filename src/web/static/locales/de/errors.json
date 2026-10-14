@@ -20,6 +20,7 @@
   "api_key_required_openrouter": "Bei Verwendung des OpenRouter-Anbieters ist ein OpenRouter-API-Schlüssel erforderlich.",
   "api_key_required_mistral": "Bei Verwendung des Mistral-Anbieters ist ein Mistral-API-Schlüssel erforderlich.",
   "api_key_required_deepseek": "Bei Verwendung des DeepSeek-Anbieters ist ein DeepSeek-API-Schlüssel erforderlich.",
+  "api_key_required_cheaperinference": "Bei Verwendung des Cheaper-Inference-Anbieters ist ein Cheaper-Inference-API-Schlüssel erforderlich.",
   "api_key_required_poe": "Ein Poe-API-Schlüssel ist erforderlich. Schlüssel unter poe.com/api_key abrufen",
   "api_key_required_nim": "Bei Verwendung des NIM-Anbieters ist ein NVIDIA NIM-API-Schlüssel erforderlich."
 }

@@ -41,6 +41,7 @@ DEFAULT_ALLOWED_HOSTS = frozenset({
     'openrouter.ai',
     'api.mistral.ai',
     'api.deepseek.com',
+    'api.cheaperinference.com',
     'api.poe.com',
     'integrate.api.nvidia.com',
 })
@@ -54,6 +55,7 @@ _CONFIGURED_ENDPOINT_ATTRS = (
     'OPENROUTER_API_ENDPOINT',
     'MISTRAL_API_ENDPOINT',
     'DEEPSEEK_API_ENDPOINT',
+    'CHEAPERINFERENCE_API_ENDPOINT',
     'POE_API_ENDPOINT',
     'NIM_API_ENDPOINT',
 )
